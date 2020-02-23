@@ -1,0 +1,64 @@
+/****************************
+*Autor: Jaime Monforte
+*Fecha: 23/06/2019
+*Licencia: gpl30
+*Version:1.0
+*Descripcion: Estilos para la página de Combate.
+****************************/
+/*
+ * Copyright (C) Daw2 2018
+ *
+ *
+ *   This program is free software: you can redistribute it and/or modify
+ *
+ *   it under the terms of the GNU General Public License as published by
+ *
+ *   the Free Software Foundation, either version 3 of the License, or
+ *
+ *   (at your option) any later version.
+ */
+.combate{
+    width: 100%;
+    color: #000;
+    font-weight: bold;
+
+}
+/*Estilos para los iconos de los bootnes*/
+.combate .iconoBoton {
+    width:  4rem;
+    height:  4rem;
+    margin: 0;
+}
+/*Botones*/
+.combate .boton {
+    padding: 0; 
+    border: #000 solid 0.25rem;
+    margin-top: 5%;
+    margin-bottom: 15%;
+}
+/*Tamaño de las imagenes de jugador y enemigo*/
+.combate .imagenVidaJu .imgPersonaje{
+    width:  4.375rem;
+    height:  4.375rem;
+}
+
+.combate h3{
+    text-align: center;
+}
+.combate .imgPersonaje{
+    border: 0.15rem solid #000;
+    background-color: #FFF;
+}
+
+
+.combate .combate-log{
+    margin-left: 20%;
+    margin-right: 20%;
+    padding-left: 15%;
+    margin-bottom: 2.5%;
+    border: #000 solid 0.5rem;
+}
+.combate .combate-log textarea{
+    text-align: cemter;
+    padding: 0;
+}

@@ -1,0 +1,68 @@
+CREATE DATABASE IF NOT EXITS rom;
+
+CREATE TABLE IF NOT EXITS usuarios (
+	id SERIAL PRIMARY KEY,
+	nombre VARCHAR (20) NOT NULL,
+	nombre_usuario VARCHAR (20) UNIQUE NOT NULL,
+	contraseña VARCHAR (10) NOT NULL
+);
+
+INSERT INTO usuarios VALUES (1, "User1", "Usuario1");
+
+CREATE TABLE IF NOT EXITS personajes (
+	id SERIAL PRIMARY KEY,
+	id_usuario INTEGER REFERENCES usuarios(id), 
+	nombre_personaje VARCHAR (20) UNIQUE NOT NULL,
+	nivel INTEGER NOT NULL,
+	experiencia INTEGER NOT NULL,
+	clase VARCHAR (10) NOT NULL,
+	inteligencia INTEGER NOT NULL,
+	fuerza INTEGER NOT NULL,
+	salud INTEGER NOT NULL,
+	estamina INTEGER NOT NULL,
+	critico INTEGER NOT NULL,
+	suerte INTEGER NOT NULL,
+	dinero INTEGER NOT NULL,
+	descripcion VARCHAR (200)
+);
+
+INSERT INTO usuarios VALUES (1, 1, "Personaje1", 100, 100, "guerrero", 100, 100, 100, 100, 100, 100, 100, "Este personaje es de prueba");
+
+CREATE TABLE IF NOT EXITS objetos (
+	id SERIAL PRIMARY KEY,
+	nombre_objeto VARCHAR (20) UNIQUE NOT NULL,
+	desc_objeto VARCHAR (100) NOT NULL,
+	inteligencia INTEGER NOT NULL,
+	fuerza INTEGER NOT NULL,
+	salud INTEGER NOT NULL,
+	estamina INTEGER NOT NULL,
+	critico INTEGER NOT NULL,
+	suerte INTEGER NOT NULL,
+	imagen VARCHAR (25)
+);
+
+INSERT INTO objetos VALUES(1, "Objeto de prueba", );
+
+CREATE TABLE IF NOT EXITS objetos_personajes (
+	id SERIAL PRIMARY KEY,
+	id_personaje INTEGER REFERENCES personajes(id), 
+	id_objeto INTEGER REFERENCES objetos(id) 
+);
+
+CREATE TABLE IF NOT EXITS misiones (
+	id SERIAL PRIMARY KEY,
+	nombre_mision VARCHAR (20) UNIQUE NOT NULL,
+	desc_mision VARCHAR (300) NOT NULL,
+	experiencia INTEGER NOT NULL,
+	dinero INTEGER NOT NULL,
+	objeto INTEGER
+);
+
+CREATE TABLE IF NOT EXITS enemigos (
+	id SERIAL PRIMARY KEY,
+	nombre_enemigo VARCHAR (20) UNIQUE NOT NULL,
+	ataque INTEGER NOT NULL,
+	salud INTEGER NOT NULL,
+	defensa INTEGER NOT NULL,
+	imagen VARCHAR (25)
+);
